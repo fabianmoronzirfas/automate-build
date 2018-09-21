@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+node_js:
+  - '8'
+before_install:
+  - npm i -g npm@latest
+script: npm run build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $TRAVIS_DEPLOY_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
