@@ -1,4 +1,8 @@
 sudo: false
+# safelist
+branches:
+  only:
+  - release
 language: node_js
 cache:
   directories:
@@ -14,4 +18,4 @@ deploy:
   github-token: $TRAVIS_DEPLOY_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   on:
-    branch: master
+    branch: release
